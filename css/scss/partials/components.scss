@@ -1,0 +1,402 @@
+//photo-block
+.photo-block {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  font-size: 0;
+  text-align: center;
+  @include box-sizing(border-box);
+
+  & .helper {
+    height: 100% !important;
+  }
+  & img {
+    max-height: 100%;
+  }
+  & a {
+    display: block;
+  }
+}
+
+///photo-block
+
+//base nav
+nav a {
+  text-decoration: none;
+}
+
+.nav {
+  font-size: 0;
+  & > li {
+    float: left;
+    position: relative;
+    font-size: $fs;
+  }
+  &-vertical > li {
+    float: none;
+  }
+  &-inline {
+    font-size: 0;
+  }
+  &-inline > li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $fs;
+  }
+  & > li > a, & > li > span, & > li > button {
+    display: block;
+  }
+}
+
+///base nav
+
+//buttons base
+[class*="btn"] {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  & > button, & > a, & > span {
+    cursor: pointer;
+    display: inline-block;
+  }
+  & .text-el, & .title {
+    font-size: $fs;
+  }
+}
+
+///buttons base
+
+//items
+[class*="items"] {
+  font-size: 0;
+  & > * {
+    display: inline-block;
+    vertical-align: top;
+    font-size: $fs;
+  }
+}
+
+.items {
+  &-vertical > li {
+    display: list-item;
+  }
+  &-vertical-middle > li {
+    vertical-align: middle;
+  }
+  &-vertical-bottom > li {
+    vertical-align: bottom;
+  }
+}
+
+///items
+
+//button carousel
+.group-button-carousel {
+  & [class*="btn-"] {
+    display: none;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    @include transition(opacity 0.5s ease-in-out);
+  }
+  & .btn-prev {
+    left: 0;
+  }
+  & .btn-next {
+    right: 0;
+  }
+}
+
+///button carousel
+
+//tabs
+.tabs {
+  & > li {
+    float: left;
+    position: relative;
+  }
+  & > li > a, & > li > button, & > li > span {
+    display: block;
+  }
+}
+
+.frame-tabs-ref {
+  & > div {
+    display: none;
+  }
+  & > div:first-child {
+    display: block;
+  }
+}
+
+///tabs
+
+//pagination
+.pagination {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  li {
+    display: inline-block;
+  }
+  li > a, li > span {
+    display: block;
+  }
+  li > a {
+    text-decoration: none;
+  }
+}
+
+///pagination
+
+//dotted lines
+[class*="d_l"] {
+  display: inline;
+  position: relative;
+  border-bottom: 1px dotted transparent;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  [disabled] & {
+    cursor: default;
+  }
+}
+
+///dotted lines
+
+//tooltip
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 2104;
+  visibility: visible;
+
+  p {
+    margin-bottom: 0;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+
+///tooltip
+
+//footer
+footer {
+  height: $fh;
+  position: relative;
+}
+
+///footer
+
+//base icons
+[class*="frame-ico"] {
+  float: left;
+  text-align: center;
+  font-size: 0;
+  background-image: none !important;
+}
+
+[class*="icons-"] {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+///base icons
+
+//text
+p {
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-bottom: 20px;
+  p {
+    margin-bottom: 20px;
+  }
+  p + h2 {
+    padding-top: 9px;
+  }
+  ul.unstyled, ol.unstyled {
+    margin: 0;
+  }
+  ul {
+    list-style-type: disc;
+    margin: 0 15px 20px 23px;
+  }
+  ul li {
+    position: relative;
+  }
+  ul ul {
+    margin: 10px 0 10px 25px;
+  }
+  ol {
+    list-style-type: decimal;
+    margin: 0 15px 20px 20px;
+  }
+  ol ol {
+    margin: 10px 0 10px 25px;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+  table {
+    margin-bottom: 15px;
+    font-size: 100%;
+    width: auto;
+  }
+  th, td {
+    padding: 4px;
+    text-align: left;
+  }
+  th {
+    text-align: center;
+  }
+  a {
+    text-decoration: underline;
+  }
+  img[align=left] {
+    margin: 0 10px 10px 0;
+    float: left;
+  }
+  img[align=right] {
+    margin: 0 0 10px 10px;
+    float: right;
+  }
+  dl {
+    margin: 0 0 20px 0;
+  }
+  dt {
+    margin-bottom: 2px;
+  }
+  dd {
+    margin-bottom: 5px;
+  }
+  hr {
+    height: 1px;
+    border: none;
+    margin: 10px 0;
+    clear: both;
+  }
+  blockquote {
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  blockquote:before, blockquote:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  blockquote:before {
+    top: 0;
+  }
+  blockquote:after {
+    bottom: 0;
+  }
+}
+
+///text
+
+//tabs
+.tabs {
+  display: inline-block;
+}
+
+.frame-tabs-ref {
+  & > div > .inside-padd {
+    padding: 15px 25px;
+  }
+}
+
+///tabs
+
+//pagination
+.pagination {
+  margin-bottom: 20px;
+  li {
+    margin: 0 2px 4px;
+  }
+  li > a, li > span {
+    padding: 0 15px;
+  }
+  li > a {
+    height: 32px;
+    line-height: 32px;
+  }
+  li > span {
+    height: 34px;
+    line-height: 34px;
+  }
+}
+
+///pagination
+
+//form
+.help-block {
+  line-height: 1.2;
+}
+
+.must {
+  position: absolute;
+  left: 100%;
+  top: 5px;
+  margin-left: 2px;
+}
+
+.horizontal-form .frame-label {
+  display: block;
+  margin-bottom: 13px;
+}
+
+.horizontal-form .frame-label > .title {
+  float: left;
+  width: 100px;
+  padding: 7px 10px 0 0;
+  text-align: left;
+}
+
+.horizontal-form .frame-form-field {
+  margin-left: 110px;
+}
+
+.vertical-form .frame-label {
+  display: block;
+}
+
+///form
+
+//tooltip
+.tooltip {
+  padding: 3px 8px;
+  margin-top: -5px;
+  padding: 5px;
+  background-color: #000;
+  color: #fff !important;
+  @include opacity(0.8);
+
+  &:after {
+    margin-left: -$tt;
+    border-width: $tt;
+  }
+
+  @each $pos in top, bottom, left, right {
+    &.#{$pos}:after {
+      border-#{$pos}-color: #000;
+    }
+  }
+}
+
+///tooltip

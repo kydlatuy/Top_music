@@ -1,0 +1,115 @@
+.b-s_b-b {
+  @include box-sizing(border-box);
+}
+
+.d_n {
+  display: none !important;
+}
+
+.d_n_ {
+  display: none;
+}
+
+.d_b {
+  display: block !important;
+}
+
+.d_b_ {
+  display: block;
+}
+
+.d_i {
+  display: inline !important;
+}
+
+.d_i_ {
+  display: inline;
+}
+
+.d_i-b {
+  display: inline-block !important;
+}
+
+.d_i-b_ {
+  display: inline-block;
+}
+
+.t-o-e {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.t-a_c {
+  text-align: center !important;
+}
+
+.t-a_r {
+  text-align: right !important;
+}
+
+.t-a_l {
+  text-align: left !important;
+}
+
+.t-d_n {
+  text-decoration: none !important;
+}
+
+.t-d_u {
+  text-decoration: underline !important;
+}
+
+.b_n {
+  background: none !important;
+}
+
+.p_r {
+  position: relative !important;
+}
+
+.f_l {
+  @include float-left;
+}
+
+.f_r {
+  @include float-right;
+}
+
+.f_n {
+  @include reset-float;
+}
+
+.c_b {
+  clear: both !important;
+}
+
+.o_h {
+  overflow: hidden !important;
+}
+
+.v-a_b {
+  vertical-align: bottom !important;
+}
+
+.v-a_bl {
+  vertical-align: baseline !important;
+}
+
+.v-a_t {
+  vertical-align: top !important;
+}
+
+.v-a_m {
+  vertical-align: middle !important;
+}
+
+.w_100 {
+  width: 100% !important;
+}
+
+.empty, .no-empty {
+  display: none;
+}

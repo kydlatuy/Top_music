@@ -1,0 +1,12 @@
+[
+  "bower_components/jquery/dist/jquery.min.js",
+  "bower_components/jReject/js/jquery.reject.js",
+  "bower_components/jquery.lazyload/jquery.lazyload.js",
+  "bower_components/modernizr/modernizr.js",
+  "bower_components/slick.js/slick/slick.min.js",
+  "bower_components/waypoints/lib/jquery.waypoints.js",
+  "bower_components/jquery-validation/dist/jquery.validate.min.js",
+  "bower_components/dropper/dist/jquery.dropper.full.min.js",
+  "bower_components/retina.js/dist/retina.min.js",
+  "vendor/toucheffects.js"
+]

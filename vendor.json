@@ -1,0 +1,7 @@
+[
+  "bower_components/slick.js/slick/slick.scss",
+  "bower_components/animate.css/animate.min.css",
+  "bower_components/dropper/dist/images/*",
+  "bower_components/dropper/src/styles/*",
+  "bower_components/jReject/images/*"
+]

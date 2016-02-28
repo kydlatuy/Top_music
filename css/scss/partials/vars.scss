@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+//default background color
+$bg: #fff;
+
+//default font-size
+$fs: 10px;
+$base-font-size: $fs;
+$base-line-height: 1.5;
+
+//width of content
+$cw: 980px;
+
+//footer height
+$fh: 199px;
+
+//padding container
+$cp: 20px;
+
+//tooltip corner size
+$tt: 5px;
+
+$icons-2x: sprite-map("icons-retina/*.png", $spacing: 2px);
+$icons-mobile: sprite-map("icons-mobile/*.png", $spacing: 2px);

@@ -1,0 +1,16 @@
+.idea
+.sass-cache
+bower_components
+node_modules
+application/config/database.php
+uploads
+uploads-live-src
+uploads-live-dist
+ci_sessions
+*.DS_Store
+rev-manifest.json
+css/build
+robots.txt
+js/front/build
+img
+vendor

@@ -1,0 +1,60 @@
+@import "compass/utilities/sprites";
+
+// http://compass-style.org/reference/compass/helpers/sprites/
+@mixin get-sprite($map, $sprite, $repeat: no-repeat, $height: true, $width: true) {
+
+  //http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
+  $sprite-image: sprite-file($map, $sprite);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
+  $sprite-map: sprite-url($map);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+  $sprite-position: sprite-position($map, $sprite);
+
+  // Returns background
+  background: $sprite-map $sprite-position $repeat;
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $height == true {
+    // Gets the height of the sprite-image
+    $sprite-height: image-height($sprite-image);
+    // Returns the height
+    height: $sprite-height;
+  }
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $width == true {
+    // Gets the width of the sprite-image
+    $sprite-width: image-width($sprite-image);
+    // Returns the width
+    width: $sprite-width;
+  }
+}
+
+//Sprite mixin, works perfectly with standard defines
+@mixin use-sprite($sprite) {
+  background-image: sprite-url($icons-2x);
+  background-size: (image-width(sprite-path($icons-2x)) / 2) (image-height(sprite-path($icons-2x)) / 2);
+  background-position: round(nth(sprite-position($icons-2x, $sprite), 1) / 2) round(nth(sprite-position($icons-2x, $sprite), 2) / 2);
+  height: image-height(sprite-file($icons-2x, $sprite)) / 2;
+  width: image-width(sprite-file($icons-2x, $sprite)) / 2;
+}
+
+@mixin set-retina($mapIcons, $file: null) {
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    @each $s in $mapIcons {
+      @if (str-index($s, '.')) {
+        #{$s} {
+          @include use-sprite(map-get($file, $s));
+        }
+      } @else {
+        .icons-#{$s} {
+          @include use-sprite($s);
+        }
+      }
+    }
+  }
+}
