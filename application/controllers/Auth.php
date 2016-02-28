@@ -17,21 +17,8 @@ class Auth extends CI_Controller {
         $this->load->model('auth_model');
     }
 
-    public function index()
-   {
-       if ($this->session->userdata('logged_in'))
-       {
-           redirect('godmode/webcodium');
-       }
-       else
-       {
-           $this->load->view("login");
-       }
-   }
-
     public function login()
     {
-        die("sfsd");
         if($this->input->post())
         {
             $this->load->library('form_validation');
@@ -40,18 +27,17 @@ class Auth extends CI_Controller {
             if ($this->form_validation->run() == FALSE)
             {
                 $temp['data'] = 1;
-                $this->load->view('godmode/login_view', $temp);
+                $this->load->view('login', $temp);
             }
             else
             {
                 $data = $this->input->post();
-                $this->load->model('godmode/admins_model');
-                $result = $this->admins_model->login($data);
+                $result = $this->auth_model->login($data);
 
                 if($result == FALSE)
                 {
                     $temp['data'] = 1;
-                    $this->load->view('godmode/login_view', $temp);
+                    $this->load->view('login', $temp);
                 }
                 else
                 {
@@ -68,7 +54,8 @@ class Auth extends CI_Controller {
         if($this->input->post())
         {
             $this->load->library('form_validation');
-//            $this->form_validation->set_rules('first_name', 'First name', 'trim|required');
+            $this->form_validation->set_rules('first_name', 'First name', 'trim|required');
+            $this->form_validation->set_rules('last_name', 'Last name', 'trim|required');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_email_check', array(
                 'required'      => 'You have not provided %s.'));
             $this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -76,13 +63,13 @@ class Auth extends CI_Controller {
             if ($this->form_validation->run() == FALSE)
             {
                 die("32");
-                $this->load->view('');
+                $this->load->view('login');
             }
             else
             {
                 $data = $this->input->post();
                 $this->auth_model->create($data);
-                redirect('index');
+                $this->load->view('login');
             }
         }
 
@@ -103,6 +90,6 @@ class Auth extends CI_Controller {
     {
         $this->session->unset_userdata('logged_in');
         $this->session->sess_destroy();
-        redirect('godmode');
+        $this->load->view('login');
     }
 } 

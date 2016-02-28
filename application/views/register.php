@@ -30,10 +30,14 @@
 <!--      <form class="login-form">-->
       <?php $this->load->helper('form');?>
       <?= form_open('auth/register');?>
-<!--        <div class="form-group">-->
-<!--          <label class="white-color" for="inputLogin">Login</label>-->
-<!--          <input type="text" class="form-control" id="inputLogin" name="login" placeholder="Enter your login here" required>-->
-<!--        </div>-->
+        <div class="form-group">
+          <label class="white-color" for="inputLogin">First Name</label>
+          <input type="text" class="form-control" id="inputLogin" name="first_name" placeholder="Enter your First Name here" required>
+        </div>
+        <div class="form-group">
+          <label class="white-color" for="inputLogin">Last Name</label>
+          <input type="text" class="form-control" id="inputLogin" name="last_name" placeholder="Enter your Last Name here" required>
+        </div>
         <div class="form-group">
           <label class="white-color" for="inputEmail">Email</label>
           <input type="text" class="form-control" name="email" placeholder="Enter your email here" required>
